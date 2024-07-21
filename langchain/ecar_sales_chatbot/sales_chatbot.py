@@ -34,13 +34,13 @@ def sales_chat(message, history):
         return ans["result"]
     # 否则输出套路话术
     else:
-        return "这个东西,怎么说的,一车一况"
+        return "这个问题我要问问领导"
     
 
 def launch_gradio():
     demo = gr.ChatInterface(
         fn=sales_chat,
-        title="二手车销售",
+        title="房产销售",
         # retry_btn=None,
         # undo_btn=None,
         chatbot=gr.Chatbot(height=600),
@@ -49,7 +49,7 @@ def launch_gradio():
     demo.launch(share=True, server_name="0.0.0.0")
 
 if __name__ == "__main__":
-    # 初始化机器人
+    # 初始化房产销售机器人
     initialize_sales_bot()
     # 启动 Gradio 服务
     launch_gradio()
